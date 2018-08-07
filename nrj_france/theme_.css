@@ -1,0 +1,33 @@
+.background {
+  background-size: cover;
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(25%,#8d0008), color-stop(100%,#2d1214)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #8d0008 25%, #2d1214 100%); /* Chrome10+,Safari5.1+ */
+  background: radial-gradient(ellipse at center, #8d0008 25%, #2d1214 100%); /* W3C */
+  
+  &:before {
+    content: '';
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	opacity: .8; 
+  }
+}
+
+.logo {
+  background-image: url(logo.png);
+}
+
+.progressBar {
+  background-color: rgb(222, 0, 31);
+}
+
+.splash {
+  background-image: url(splash.png);
+}
+
+.watermark {
+  background-image: url(watermark.png);
+  background-size: 57px 57px;
+}
