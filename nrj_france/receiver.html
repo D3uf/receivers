@@ -556,6 +556,14 @@
                     'url': url
                 });
 
+                window.mediaHost.updateSegmentRequestInfo = function(requestInfo) {
+                  // example of setting CORS withCredentials
+                  requestInfo.withCredentials = true;
+                  // example of setting headers
+                  requestInfo.headers = {};
+                  requestInfo.headers['content-type'] = 'text/xml;charset=utf-8';
+                };
+
                 window.mediaHost.onError = function (errorCode) {
                     console.error('### HOST ERROR - Fatal Error: code = ' + errorCode);
                     setHudMessage('mediaHostState', 'Fatal Error: code = ' + errorCode);
@@ -612,6 +620,7 @@
                     // Player registers to listen to the media element events through the mediaHost property of the
                     // mediaElement
                     window.mediaPlayer = new cast.player.api.Player(window.mediaHost);
+                    setHudMessage('mediaProtocol', initialTimeIndexSeconds);
                     window.mediaPlayer.load(protocol, initialTimeIndexSeconds);
                 }
             }
